@@ -5,12 +5,11 @@ class Loader {
     }
     load() {
         this.fileNames.map(file => new (require(file))())
-            .forEach((command) => {
-                const { name, aliases } = command;
+            .forEach(command => {
                 
-                this.set(name, command);
+                this.set(command.name, command);
 
-                for (alias of aliases) {
+                for (alias of command.aliases) {
                     this.set(alias, command);
                 }
             });
