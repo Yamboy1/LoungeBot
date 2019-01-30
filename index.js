@@ -10,8 +10,8 @@ const loader = new Loader("./Commands");
 client.on("message", message => {
     const commandName = message.content.toLowerCase();
     if (loader.has(commandName)) {
-        loader.get(commandName).execute({ client, message })
+        loader.get(commandName).execute({ client, message });
     }
-}
+});
 
 client.login(token);
