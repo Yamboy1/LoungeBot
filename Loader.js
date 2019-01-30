@@ -4,7 +4,7 @@ class Loader {
         this.load();
     }
     load() {
-        this.fileNames.map(file => new (require(file))())
+        this.filenames.map(file => new (require(file))())
             .forEach(command => {
                 
                 this.set(command.name, command);
