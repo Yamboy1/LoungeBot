@@ -2,15 +2,21 @@ const { Client } = require("discord.js");
 
 const Loader = require("./Loader");
 
-const { token } = require("./secrets.json");
+const { token, prefix } = require("./secrets.json");
 
 const client = new Client();
 const loader = new Loader("./Commands");
 
 client.on("message", message => {
-    const commandName = message.content.toLowerCase();
-    if (loader.has(commandName)) {
-        loader.get(commandName).execute({ client, message });
+    const messageText = message.content;
+
+    if (messageText.startsWith(prefix)) {
+        const args = messageText.slice(2).split(/ +/).filter(x => x !== "");
+        const commandName = args[0];
+
+        if (loader.has(commandName)) {
+            loader.get(commandName).execute({ client, message, args });
+        }
     }
 });
 
