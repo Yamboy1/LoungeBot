@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/EliotChignell/LoungeBot#readme",
   "dependencies": {
-    "better-sqlite-pool": "^0.2.0",
     "discord.js": "github:discordjs/discord.js",
-    "enmap": "^4.7.0",
-    "myjson-api": "^1.0.1"
+    "glob": "^7.1.3"
   }
 }
