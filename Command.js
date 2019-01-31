@@ -8,7 +8,7 @@ class Command {
         this.description = description;
         this.aliases = aliases;
     }
-    execute() {
+    async execute() {
         return void 0;
     }
 }
