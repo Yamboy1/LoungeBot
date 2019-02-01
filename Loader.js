@@ -2,6 +2,7 @@ const { Collection } = require("discord.js");
 
 class Loader extends Collection {
     constructor(filenames) {
+        super();
         this.filenames = filenames;
         this.load();
     }
