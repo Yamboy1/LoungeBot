@@ -1,11 +1,12 @@
 const { Client } = require("discord.js");
+const { sync: globSync } = require("glob");
 
 const Loader = require("./Loader");
 
 const { token, prefix } = require("./secrets.json");
 
 const client = new Client();
-const loader = new Loader("./Commands");
+const loader = new Loader(globSync("./Commands/**/*.js"));
 
 client.on("message", message => {
     const messageText = message.content;
