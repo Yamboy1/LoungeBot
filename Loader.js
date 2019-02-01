@@ -1,4 +1,6 @@
-class Loader {
+const { Collection } = require("discord.js");
+
+class Loader extends Collection {
     constructor(filenames) {
         this.filenames = filenames;
         this.load();
