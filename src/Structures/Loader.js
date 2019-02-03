@@ -9,7 +9,7 @@ class Loader extends Collection {
     }
     load() {
         this.filenames.map(file => {
-            const path = require.resolve(file, cwd ? { paths: cwd } : null);
+            const path = require.resolve(file, this.cwd ? { paths: this.cwd } : null);
             const Cmd = require(path);
             return new Cmd();
         }).forEach(command => {
