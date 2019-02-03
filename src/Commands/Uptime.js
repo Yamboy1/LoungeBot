@@ -10,7 +10,7 @@ class Uptime extends Command {
             description: "This command tells you my uptime"
         });
     }
-    async execute({ message }) {
+    async execute({ message, client }) {
         await message.channel.send(`My uptime is \`${moment.preciseDiff(client.uptime, moment.now)}\``)
     }
 }
