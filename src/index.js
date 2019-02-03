@@ -11,7 +11,10 @@ client.on("message", message => {
     const messageText = message.content;
 
     if (messageText.startsWith(prefix)) {
-        const args = messageText.slice(2).split(/ +/).filter(x => x !== "");
+        const args = messageText.slice(prefix.length)
+            .split(/ +/)
+            .filter(x => x !== "");
+
         const commandName = args[0];
 
         if (loader.has(commandName)) {
