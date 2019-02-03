@@ -1,9 +1,8 @@
 const { Client } = require("discord.js");
 const { sync: globSync } = require("glob");
 
-const Loader = require("./Loader");
-
-const { token, prefix } = require("./secrets.json");
+const { Loader } = require("./Structures");
+const { token, prefix } = require("./Config");
 
 const client = new Client();
 const loader = new Loader(globSync("./Commands/**/*.js"));
