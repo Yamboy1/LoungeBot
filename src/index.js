@@ -15,7 +15,7 @@ client.on("message", message => {
     const messageText = message.content;
 
     if (messageText.startsWith(prefix)) {
-        const args = messageText.slice(prefix.length)
+        const args = messageText.slice(prefix.length-1)
             .split(/ +/)
             .filter(x => x !== "");
 
