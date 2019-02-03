@@ -5,7 +5,7 @@ const { Loader } = require("./Structures");
 const { token, prefix } = require("./Config");
 
 const client = new Client();
-const loader = new Loader(globSync("./Commands/**/*.js"));
+const loader = new Loader(globSync("./Commands/**/*.js"), __dirname);
 
 client.on("message", message => {
     const messageText = message.content;
