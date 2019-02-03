@@ -18,6 +18,8 @@
   "homepage": "https://github.com/EliotChignell/LoungeBot#readme",
   "dependencies": {
     "discord.js": "github:discordjs/discord.js",
-    "glob": "^7.1.3"
+    "glob": "^7.1.3",
+    "moment": "^2.24.0",
+    "moment-precise-range-plugin": "^1.3.0"
   }
 }
