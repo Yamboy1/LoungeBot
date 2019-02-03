@@ -1,10 +1,10 @@
-const Command = require("../Command");
+const { Command } = require("../Structures");
 
-class PingCommand extends Command {
+class Ping extends Command {
     constructor() {
         super({
             name: "ping",
-            description: "This commands tells you your ping."
+            description: "This command tells you my ping."
         });
     }
     async execute({ client, message }) {
@@ -13,4 +13,4 @@ class PingCommand extends Command {
     }
 }
 
-module.exports = PingCommand;
+module.exports = Ping;
