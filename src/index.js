@@ -7,6 +7,10 @@ const { token, prefix } = require("./Config");
 const client = new Client();
 const loader = new Loader(globSync("./Commands/**/*.js"), __dirname);
 
+client.on("ready", () => {
+    console.log("Ready");
+})
+
 client.on("message", message => {
     const messageText = message.content;
 
