@@ -4,7 +4,7 @@ class Ping extends Command {
     constructor() {
         super({
             name: "ping",
-            description: "This command tells you my ping."
+            description: "This command tells you my ping"
         });
     }
     async execute({ client, message }) {

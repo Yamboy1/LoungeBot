@@ -5,7 +5,7 @@ class Help extends Command {
     constructor() {
         super({
             name: "help",
-            description: "This command tells you the available commands/games that you can use/play.",
+            description: "This command tells you the available commands/games that you can use/play",
         });
     }
     async execute({ message, args, client, loader }) {
