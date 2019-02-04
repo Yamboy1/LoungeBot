@@ -1,11 +1,15 @@
 const { Client } = require("discord.js");
 const { sync: globSync } = require("glob");
+const path = require("path");
 
 const { Loader } = require("./Structures");
 const { token, prefix } = require("./Config");
 
 const client = new Client();
-const loader = new Loader(globSync("./Commands/**/*.js"), __dirname);
+const loader = new Loader(
+    path.join(__dirname, globSync("./Commands/**/*.js")),
+    __dirname
+);
 
 client.on("ready", () => {
     console.log("Ready");
