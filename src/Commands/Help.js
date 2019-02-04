@@ -23,7 +23,4 @@ class Help extends Command {
     }
 }
 
-const { MessageEmbed } = require("discord.js");
-
-new MessageEmbed()
-    .setD
+module.exports = Help;
