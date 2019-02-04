@@ -1,5 +1,5 @@
 const moment = require("moment");
-require("moment-precise-range-plugin");
+require("moment-duration-format");
 
 const { Command } = require("../Structures");
 
