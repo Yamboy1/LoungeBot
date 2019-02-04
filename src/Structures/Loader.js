@@ -3,9 +3,11 @@ const { Collection } = require("discord.js");
 class Loader extends Collection {
     constructor(filenames, cwd=null) {
         super();
-        this.filenames = filenames;
-        this.cwd = cwd;
-        this.load();
+        if (this.filenames) {
+            this.filenames = filenames;
+            this.cwd = cwd;
+            this.load();
+        }
     }
     load() {
         this.filenames.map(file => {
