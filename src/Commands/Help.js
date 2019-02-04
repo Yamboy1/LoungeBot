@@ -26,6 +26,19 @@ class Help extends Command {
                 )
             }
         }
+        const normalCommands = loader.filter(command => command.type === 0).array();
+        const games = loader.filter(command => command.type === 1).array();
+
+        return message.channel.send(
+            createEmbed({
+                    title: "Help",
+                    descirption: codeBlock(
+                        normalCommands.length ? "Normal Commands:" : "" +
+                        "\n" + normalCommands.join(", ") +
+                        "\n" +
+                        "\n" + games.join(", "), { lang: "prolog" })
+            })
+        );
     }
 }
 
