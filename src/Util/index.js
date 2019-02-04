@@ -3,7 +3,7 @@ module.exports = {
     codeBlock: (text, { type, lang } = { type: "full" }) =>
         `
             ${type==="full"?"```":"`"}${lang?lang:""}
-            ${text.replace("`", "\\\`")}
+            ${text}
             ${type==="full"?"```":"`"}
         `
 }
