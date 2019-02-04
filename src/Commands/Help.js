@@ -15,7 +15,7 @@ class Help extends Command {
                 return message.channel.send(
                     createEmbed({
                         title: "Help",
-                        description: codeBlock("`a`a`a`a")
+                        description: codeBlock("`a`a`a`a", { type: "single" })
                     })
                 )
             }
