@@ -9,7 +9,7 @@ class Help extends Command {
         });
     }
     async execute({ message, args, client, loader }) {
-        const { createEmbed } = ClientUtil(client)
+        const { createEmbed } = ClientUtil(client);
         if (args[1]) {
             if (loader.has(args[1])) {
                 const command = loader.get(args[1]);
@@ -33,9 +33,10 @@ class Help extends Command {
             createEmbed({
                     title: "Help",
                     descirption: codeBlock(
-                        normalCommands.length ? "Normal Commands:" : "" +
+                        (normalCommands.length ? "Normal Commands:" : "") +
                         "\n" + normalCommands.join(", ") +
                         "\n" +
+                        "\n" + (games.length ? "Games:" : "") +
                         "\n" + games.join(", "), { lang: "prolog" })
             })
         );
