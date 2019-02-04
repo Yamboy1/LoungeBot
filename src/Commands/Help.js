@@ -16,12 +16,12 @@ class Help extends Command {
                 return message.channel.send(
                     createEmbed({
                         title: "Help",
-                        description: codeBlock(`\
-                            Command Name: + ${command.name}\
+                        description: codeBlock("\
+                            Command Name: " + command.name + "\
                             \n\
                             \n\
-                            ${command.description}\
-                        `)
+                            " + command.description
+                        )
                     })
                 )
             }
