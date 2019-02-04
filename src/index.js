@@ -26,7 +26,7 @@ client.on("message", message => {
         const commandName = args[0];
 
         if (loader.has(commandName)) {
-            loader.get(commandName).execute({ client, message, args });
+            loader.get(commandName).execute({ client, message, args, loader });
         }
     }
 });
