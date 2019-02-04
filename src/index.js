@@ -7,7 +7,7 @@ const { token, prefix } = require("./Config");
 
 const client = new Client();
 const loader = new Loader(
-    path.join(__dirname, globSync("./Commands/**/*.js")),
+    globSync(path.join(__dirname, "./Commands/**/*.js")),
     __dirname
 );
 
