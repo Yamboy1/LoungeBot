@@ -11,7 +11,7 @@ module.exports = client => {
                 .setDescription(description)
                 .setImage(image)
                 .setThumbnail(thumbnail)
-                .setAuthor(client.user.username, client.user.displayAvatarURL)
+                .setAuthor(client.user.username, client.user.displayAvatarURL())
                 .setColor(color)
                 .setFooter(`${prefix}[command]`)
                 .setTimestamp()
