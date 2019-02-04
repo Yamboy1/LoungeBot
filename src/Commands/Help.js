@@ -10,34 +10,38 @@ class Help extends Command {
     }
     async execute({ message, args, client, loader }) {
         const { createEmbed } = ClientUtil(client);
-        if (args[1]) {
+        let description;
+
+        if (!args[1]) {
+            const commandArray = type => loader.filter(x => x.type === type)
+            const normalCommands = commandArray(0).map(x => x.name);
+            const games =          commandArray(1).map(x => x.name);
+
+            description = 
+                (normalCommands.length ? "Normal Commands:" : "") +
+                "\n" + normalCommands.join(", ") +
+                "\n" +
+                "\n" + (games.length ? "Games:" : "") +
+                "\n" + games.join(", ");
+        } else {
             if (loader.has(args[1])) {
                 const command = loader.get(args[1]);
-                return message.channel.send(
-                    createEmbed({
-                        title: "Help",
-                        description: codeBlock(
-                            "Command Name: " + command.name +
-                            "\n"+
-                            "\n"+
-                            command.description
-                        )
-                    })
-                )
+
+                description = 
+                    "Command Name: " + command.name +
+                    "\n"+
+                    "\n"+
+                    command.description;
+            } else {
+                description = "Command not found";
             }
         }
-        const normalCommands = loader.filter(command => command.type === 0).array();
-        const games = loader.filter(command => command.type === 1).array();
-
+        
+        
         return message.channel.send(
             createEmbed({
                     title: "Help",
-                    descirption: codeBlock(
-                        (normalCommands.length ? "Normal Commands:" : "") +
-                        "\n" + normalCommands.join(", ") +
-                        "\n" +
-                        "\n" + (games.length ? "Games:" : "") +
-                        "\n" + games.join(", "), { lang: "prolog" })
+                    description: codeBlock(description, { lang: "prolog" })
             })
         );
     }

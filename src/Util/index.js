@@ -1,6 +1,6 @@
 module.exports = {
     ClientUtil: require("./ClientUtil"),
-    codeBlock: (text, { type, lang } = { type: "full" }) =>
+    codeBlock: (text, { type="full", lang } = {}) =>
             (type==="full"?"```":"`") + (lang?lang:"") +
             "\n" +
             text +
