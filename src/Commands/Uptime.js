@@ -11,7 +11,9 @@ class Uptime extends Command {
         });
     }
     async execute({ message, client }) {
-        await message.channel.send(`My uptime is \`${moment.preciseDiff(client.uptime, moment.now)}\``)
+        await message.channel.send("My uptime is `" +
+            moment.duration(client.uptime).format("Y [years], M [months], D [days], H [hours], m [minutes], s [seconds]") +
+        "`");
     }
 }
 
