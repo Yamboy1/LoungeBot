@@ -12,10 +12,16 @@ class Help extends Command {
         const { createEmbed } = ClientUtil(client)
         if (args[1]) {
             if (loader.has(args[1])) {
+                const command = loader.get(args[1]);
                 return message.channel.send(
                     createEmbed({
                         title: "Help",
-                        description: codeBlock("`a`a`a`a", { type: "single" })
+                        description: codeBlock(`\
+                            Command Name: + ${command.name}\
+                            \n\
+                            \n\
+                            ${command.description}\
+                        `)
                     })
                 )
             }
